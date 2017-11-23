@@ -13,3 +13,6 @@ This project for us is to go through the entire process of building an applicati
 2. the Agile developing model will be used.
 (eg. aim to have a car: first build a bicycle, then a bike, finally a car  )
 3. more to come
+
+## related material 
+1.[Chinese Django tutorial](https://code.ziqiangxuetang.com/django/django-install.html)
