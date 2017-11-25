@@ -8,6 +8,9 @@ This project for us is to go through the entire process of building an applicati
 2. Mysql --- database
 3. HTML CSS JS --- for frontend
 
+## Tools
+Django nginx wsgi mysql
+
 ## Schedule
 1. the entire project will be completed within 3 weeks
 2. the Agile developing model will be used.
