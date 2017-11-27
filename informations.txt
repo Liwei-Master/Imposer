@@ -1,0 +1,5 @@
+1.uwsgi于nginx连接的端口为8001（socket:8001）
+2.访问端口为8000
+3.nginx设置页面在/etc/nginx/my_site.conf
+4.STATIC_ROOT='/home/wwwroot/ftpuser/proj/static'
+  MEDIA_ROOT='/home/wwwroot/ftpuser/proj/media'
