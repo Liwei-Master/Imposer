@@ -1,0 +1,12 @@
+
+1.启动django项目
+切到proj目录下，运行命令
+uwsgi --socket :8001 --module imposter.wsgi
+#说明：
+#--socket :8001: 使用uwsgi协议，端口为8001
+#--module imposter.wsgi 模块为
+
+2.重启nginx
+/etc/init.d/nginx restart
+
+
