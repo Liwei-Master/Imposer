@@ -20,5 +20,5 @@ from Login import views
 # 对应域名和具体的html
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^home', views.home),
+    url(r'^Login', views.Login),
 ]
