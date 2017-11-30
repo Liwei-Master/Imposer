@@ -21,4 +21,6 @@ from Login import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^Login', views.Login),
+    url(r'^submit', views.submit),
+
 ]
