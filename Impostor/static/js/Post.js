@@ -2,8 +2,8 @@
 
 $('#submit').click(function(){
 	// 还没排除空的情况
-    var input_name = $('#username').val();
-    var passwords = $('#keywords').val();
+    var input_name = $('#email').val();
+    var passwords = $('#password').val();
     $.ajax({
         url: "/submit/", data: {'email': input_name, 'keywords': passwords}, type: 'POST',
         //success: function (arg) {

@@ -12,7 +12,7 @@ def Login (request):
     return render(request, "Login.html", {'error_info': "是第一次的话，请申请账号"})
 
 def submit (request):
-    username = request.POST['username'].strip()
+    username = request.POST['email'].strip()
     keywords = request.POST['keywords'].strip()
 
     if request.method == 'POST' and username in username_list:
