@@ -15,14 +15,14 @@ $('#submit').click(function(){
 
 $('#sign_up').click(function(){
 
-    console.log("1sasasadadq");
+
     var email = $('#set_email').val();
     var password = $('#set_password').val();
     var name = $('#set_name').val();
-    console.log("name")
+
 	var new_data = [{"new_email": email}, {"keywords": password}, {"name": name}]
     $.ajax({
-        url: "/sign_up/", data: {data: new_data}, type: 'POST',
+        url: "/sign_up/", data: {'data': JSON.stringify(new_data)}, type: 'POST',
         //success: function (arg) {
           //  $('#feedback').html("<p>"+"登陆失败"+"</p>")
         //}

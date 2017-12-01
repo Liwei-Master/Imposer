@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.shortcuts import HttpResponse
+import json
 
 # Create your views here.
 # test command : python manage.py runserver 127.0.0.1:8000
@@ -29,13 +30,14 @@ def submit (request):
         return render(request, "Login.html", {'error_info': "是第一次的话，请申请账号"})
 
 def sign_up (request):
-    #email = request.POST['new_email'].strip()
-    #keyword = request.POST['keyword'].strip()
-    #name = request.POST['name'].strip()
+    json_data = request.POST.get('data')
+    content = json.loads(json_data)
 
-    #print(email, keyword, name)
-    data = request.POST.get('data')
-    print(data)
+    email = content[0].new_email
+    keyword = content[1].keywords
+    name = content[2].name
+
+    print(email, keyword, name)
 
 
     return render(request, "Login.html", {'error_info': "听说你是第一次登录哦"})
