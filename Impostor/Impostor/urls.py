@@ -20,7 +20,8 @@ from Login import views
 # 对应域名和具体的html
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^Login', views.Login),
-    url(r'^submit', views.submit),
+    url(r'^Login/', views.Login),
+    url(r'^submit/', views.submit),
+    url(r'^sign_up/', views.sign_up)
 
 ]

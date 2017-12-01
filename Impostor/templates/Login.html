@@ -95,12 +95,14 @@
 
 
 			<div class="signup f-l">
+                <form action=" /sign_up/" class="form-horizontal" role="form" method = "post">
+
 
 				<div class="form-group">
 
 					<div class="signup-form">
 
-						<input type="text" placeholder="邮箱" class="email-mobile" onblur="verify.verifyEmail(this)">
+						<input id = "set_email"  type="text" placeholder="邮箱" class="email-mobile" onblur="verify.verifyEmail(this)">
 
 						<!-- <a href="javascript:;" class="signup-select">手机注册</a> -->
 
@@ -114,33 +116,34 @@
 
 					<div class="form-group">
 
-						<input type="text"  placeholder="您的名字">
+						<input id = "set_name" type="text"  placeholder="您的名字">
 
 					</div>
 
 					<div class="form-group">
 
-						<input type="password" placeholder="密码（字母、数字，至少6位）" onblur="verify.PasswordLenght(this)" style='display: block;'>
+						<input id = "set_password" type="password" placeholder="密码（字母、数字，至少6位）" onblur="verify.PasswordLenght(this)" style='display: block;'>
                          <span class="error-notic">密码长度不够</span>
 
 
 					</div>
 
-					<div class="form-group">
+					<div class="form-group" id = "sign_up">
 
-						<button type="submit" class="tran pr">
+						<button type="submit" class="tran pr" >
 
 							<a href="javascript:;" class="tran">注册</a>
 
-							<img class="loading" src="images/loading.gif">
+							<img class="loading" src="../static/image/loading.gif">
 
 						</button>
 
-					</div>
+                    </div>
 
 					<!-- <p class="view-clause">点击注册，即同意我们的 <a href="#">用户隐私条款</a></p> -->
 
 				</div><!-- 邮箱注册 -->
+                </form>
 
 				<div class="signup-tel" style="display:none">
 

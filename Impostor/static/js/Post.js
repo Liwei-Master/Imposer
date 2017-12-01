@@ -13,6 +13,23 @@ $('#submit').click(function(){
 
 })
 
+$('#sign_up').click(function(){
+
+    console.log("1sasasadadq");
+    var email = $('#set_email').val();
+    var password = $('#set_password').val();
+    var name = $('#set_name').val();
+    console.log("name")
+	var new_data = [{"new_email": email}, {"keywords": password}, {"name": name}]
+    $.ajax({
+        url: "/sign_up/", data: {data: new_data}, type: 'POST',
+        //success: function (arg) {
+          //  $('#feedback').html("<p>"+"登陆失败"+"</p>")
+        //}
+    })
+
+})
+
 var _handle='';//储存电话是否填写正确
 
 		$(function(){
