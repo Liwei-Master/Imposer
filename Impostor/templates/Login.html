@@ -30,7 +30,7 @@
 		<div class="box-con tran">
 
 			<div class="login-con f-l">
-                <form action=" /submit/" class="form-horizontal" role="form" method = "post">
+                <form action="/submit/" class="form-horizontal" role="form" method = "post">
 
 				<div class="form-group">
 
@@ -48,7 +48,7 @@
 
 				<div class="form-group">
 
-					<button type="submit" class="tran pr" id="login111" onclick = "record()" >
+					<button type="submit" class="tran pr" id="login" onclick = "record()" >
 
 						<a href="#" class="tran login" onclick = "record()">登录</a>
 
@@ -102,7 +102,7 @@
 
 					<div class="signup-form">
 
-						<input id = "set_email"  type="text" placeholder="邮箱" class="email-mobile" onblur="verify.verifyEmail(this)">
+						<input id = "set_email"  type="text" placeholder="邮箱" class="email-mobile" onblur="verify.verifyEmail(this)" name = "set_email">
 
 						<!-- <a href="javascript:;" class="signup-select">手机注册</a> -->
 
@@ -116,21 +116,21 @@
 
 					<div class="form-group">
 
-						<input id = "set_name" type="text"  placeholder="您的名字">
+						<input id = "set_name" type="text"  placeholder="您的名字" name = "set_name">
 
 					</div>
 
 					<div class="form-group">
 
-						<input id = "set_password" type="password" placeholder="密码（字母、数字，至少6位）" onblur="verify.PasswordLenght(this)" style='display: block;'>
+						<input id = "set_password" type="password" placeholder="密码（字母、数字，至少6位）" onblur="verify.PasswordLenght(this)" style='display: block;' name = "set_password">
                          <span class="error-notic">密码长度不够</span>
 
 
 					</div>
 
-					<div class="form-group" id = "sign_up">
+					<div class="form-group">
 
-						<button type="submit" class="tran pr" >
+						<button type="submit" class="tran pr" id = "sign_up">
 
 							<a href="javascript:;" class="tran">注册</a>
 

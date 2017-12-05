@@ -1,34 +1,17 @@
 //记录已经输入的数据到cookie
 
-$('#submit').click(function(){
-	// 还没排除空的情况
-    var input_name = $('#email').val();
-    var passwords = $('#password').val();
-    $.ajax({
-        url: "/submit/", data: {'email': input_name, 'keywords': passwords}, type: 'POST',
+
+
+
+	//var new_data = [{"new_email": email}, {"keywords": password}, {"name": name}]
+	//$.ajax({
+      //  url: "/sign_up/", data: {'data': JSON.stringify(new_data)}, type: 'POST',
         //success: function (arg) {
           //  $('#feedback').html("<p>"+"登陆失败"+"</p>")
         //}
-    })
-
-})
-
-$('#sign_up').click(function(){
+    //})
 
 
-    var email = $('#set_email').val();
-    var password = $('#set_password').val();
-    var name = $('#set_name').val();
-
-	var new_data = [{"new_email": email}, {"keywords": password}, {"name": name}]
-    $.ajax({
-        url: "/sign_up/", data: {'data': JSON.stringify(new_data)}, type: 'POST',
-        //success: function (arg) {
-          //  $('#feedback').html("<p>"+"登陆失败"+"</p>")
-        //}
-    })
-
-})
 
 var _handle='';//储存电话是否填写正确
 

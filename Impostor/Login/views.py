@@ -29,17 +29,26 @@ def submit (request):
     else:
         return render(request, "Login.html", {'error_info': "是第一次的话，请申请账号"})
 
-def sign_up (request):
-    json_data = request.POST.get('data')
-    content = json.loads(json_data)
-
-    email = content[0].new_email
-    keyword = content[1].keywords
-    name = content[2].name
-
-    print(email, keyword, name)
+def sign_up(request):
+    if request.method == 'POST':
+        email = request.POST.get('set_email')
+        keywords = request.POST.get('set_password')
+        username = request.POST.get('set_name')
+        print(email, keywords, username)
+        return render(request, "Login.html", {'error_info': "听说你是第一次登录哦"})
 
 
-    return render(request, "Login.html", {'error_info': "听说你是第一次登录哦"})
+#def sign_up (request):
+ #   json_data = request.POST.get('data')
+  #  content = json.loads(json_data)
+
+   # email = content[0].new_email
+    #keyword = content[1].keywords
+    #name = content[2].name
+
+    #print(email, keyword, name)
+
+
+    #return render(request, "Login.html", {'error_info': "听说你是第一次登录哦"})
 
 
