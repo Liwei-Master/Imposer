@@ -22,7 +22,7 @@ def submit (request):
 
         if keywords in keywords_list: # 对比数据库
 
-            return render(request, "Login.html", {'error_info': "登陆成功"})
+            return render(request, "Index.html", {'error_info': "登陆成功"})
         else:
             return render(request, "Login.html", {'error_info': "该用户名或密码不正确，请重新输入"})
 
