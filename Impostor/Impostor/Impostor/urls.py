@@ -23,6 +23,6 @@ urlpatterns = [
     url(r'^Login/', views.Login),
     url(r'^submit/', views.submit),
     url(r'^sign_up/', views.sign_up),
-    url(r'^reset/', views.reset),
-    url(r'^new_password/', views.new_passwords)
+    url(r'^find_password/', views.find_password)
+
 ]

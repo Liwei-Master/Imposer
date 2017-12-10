@@ -7,6 +7,8 @@ import json
 # 根据API 返回 内容
 username_list = ("Tony", "Wang")
 keywords_list = ("123")
+email_list = ("296390818@qq.com")
+code_list = ("321")
 
 def Login (request):
 
@@ -16,11 +18,11 @@ def submit (request):
     username = request.POST.get('email')
     keywords = request.POST.get('keywords')
 
-    if request.method == 'POST' and username in username_list: # 对比数据库
+    if request.method == 'POST' and username in username_list: # 接数据库
 
-        print(username, keywords)
+        print(username, keywords) # test
 
-        if keywords in keywords_list: # 对比数据库
+        if keywords in keywords_list: # 接数据库
 
             return render(request, "Login.html", {'error_info': "登陆成功"})
         else:
@@ -35,25 +37,19 @@ def sign_up(request):
         email = request.POST.get('set_email')
         keywords = request.POST.get('set_password')
         username = request.POST.get('set_name')
-
-        print(email, keywords, username) # 放进数据库
+        print(email, keywords, username)
         return render(request, "Login.html", {'error_info': "听说你是第一次登录哦"})
 
-def reset(request):
-    if request.method == 'POST':
-        email = str(request.POST.get('send_email'))
-        if not email.find("@",2):
-            return render(request, "Login.html", {'error_info': "邮箱有误"})
-
-        print(email) # 对比进数据库 是就返回
-        return render(request, "PSDchange.html")
-
-def new_passwords(request):
-
+def find_password(request):
     if request.method == "POST":
-        new_password = request.POST.get("new_password")
-        print(new_password)# 放进数据库
-        return render(request, "Login.html", {'error_info': "密码修改成功！"})
+        email = str(request.POST.get('send_email'))
+        if email.find("@", 2) < 0:
+            return render(request, "Login.html", {'error_info': "邮箱输入错误"})
+
+        print(email)
+        return render(request, "Login.html",)
+
+
 
 #def sign_up (request):
  #   json_data = request.POST.get('data')

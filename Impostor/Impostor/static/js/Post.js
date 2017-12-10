@@ -1,8 +1,14 @@
-
-// 记录已经输入的数据到cookie
-
+//记录已经输入的数据到cookie
 
 
+
+	//var new_data = [{"new_email": email}, {"keywords": password}, {"name": name}]
+	//$.ajax({
+      //  url: "/sign_up/", data: {'data': JSON.stringify(new_data)}, type: 'POST',
+        //success: function (arg) {
+          //  $('#feedback').html("<p>"+"登陆失败"+"</p>")
+        //}
+    //})
 
 
 
@@ -222,22 +228,6 @@ var _handle='';//储存电话是否填写正确
 
 			},//验证设置密码长度
 
-			Name:function(_this){
-
-				var _length=$(_this).val().length;
-
-				if(_length < 1){
-
-					showNotic(_this)
-
-				}else{
-
-            		hideNotic(_this)
-
-            	}
-
-			},//验证设置密码长度
-
 			VerifyCount:function(_this){
 
 				var _count="123456";
@@ -259,6 +249,8 @@ var _handle='';//储存电话是否填写正确
 			}//验证验证码
 
 		}
+
+
 
 
 //登陆非空验证
