@@ -1,4 +1,4 @@
-
+﻿
 1.启动django项目
 切到proj目录下，运行命令
 uwsgi --socket :8001 --module imposter.wsgi
@@ -9,4 +9,10 @@ uwsgi --socket :8001 --module imposter.wsgi
 2.重启nginx
 /etc/init.d/nginx restart
 
+3.MYSQL
+python manage.py makemigrations [appname]
+python manage.py makemigrations impweb
+python manage.py migrate
+migrate: 用于执行迁移动作，具有syncdb的功能
+makemigrations: 基于当前的model创建新的迁移策略文件
 
