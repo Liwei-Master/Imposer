@@ -18,7 +18,7 @@ def login (request):
     info='This request is GET'
     if request.method=='POST':
         uf=UserForm(request.POST)
-        info='post,not valid%s'%uf.__dict__
+        info='post,not valid %s'%uf.errors
         if uf.is_valid():
             username=uf.cleaned_data['username']
             password=uf.cleaned_data['password']
@@ -26,11 +26,11 @@ def login (request):
 
             user=User.objects.filter(username=username,password=password)
             if user:
-                #return render(request, "Index.html", {'error_info': "登录成功"})
-                return HttpResponse('success!%s,%s'%(username,password))
+                return render(request, "impweb/main.html", {'error_info': "登录成功"})
+                #return HttpResponse('success!%s,%s'%(username,password))
             else:
-                #return render(request, "Login.html", {'error_info': "该用户名或密码不正确，请重新输入"})
-                return HttpResponse('该用户名或密码不正确，请重新输入%s,%s'%(username,password))
+                return render(request, "impweb/login.html", {'error_info': "该用户名或密码不正确，请重新输入"})
+                #return HttpResponse('该用户名或密码不正确，请重新输入%s,%s'%(username,password))
 
     #return render(request, "Login.html", {'error_info': "data error,request failed"})
     return HttpResponse('data error, request failed, %s'%info)
@@ -43,15 +43,17 @@ def sign_up(request):
         if uf.is_valid():
             username=uf.cleaned_data['username']
             password=uf.cleaned_data['password']
+            email=uf.cleaned_data['email']
+            facebook=uf.cleaned_data['facebook']
             #registertime
 
-            newUser= User(username=username,password=password)
+            newUser= User(username=username,password=password,email=email,facebook=facebook)
             newUser.save()
-            #return render(request, "Index.html", {'error_info': "登录成功,听说你是第一次登录哦"})
+            #return render(request, "main.html", {'error_info': "登录成功,听说你是第一次登录哦"})
             return HttpResponse('success')
         else:
             return HttpResponse('not valid')
-    #return render(request, "Login.html", {'error_info': "data error,request failed"})
+    #return render(request, "login.html", {'error_info': "data error,request failed"})
     return HttpResponse('failed,%s'%info)
 
 @csrf_exempt
@@ -81,9 +83,8 @@ def login(request):
     return render(request,'login.html',context)
 '''
 def index(request):
-    user_list=User.objects.order_by('id')[:5]
-    context={'user_list':user_list}
-    return render(request,'impweb/index.html',context)
+
+    return render(request,'impweb/login.html',{'error_info': "indexpage: 请输入密码！"})
 
 def detail(request,userid):
     user = get_object_or_404(User, pk=userid)

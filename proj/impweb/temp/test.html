@@ -1,1 +1,113 @@
-b'<!doctype html>\n\n<html lang="en">\n\n<head>\n\n\t<meta charset="UTF-8">\n\n\t<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">\n\n\t<title>Imposter</title>\n\n\t<link rel="stylesheet" href="../static/css/style.css">\n\n\t<link rel="stylesheet" href="../static/css/iconfont.css">\n\n\t<script src="../static/jquery/3.2.0/jquery.min.js"></script>\n\t <script src="../static/js/Post.js"></script>\n\n</head>\n\n<body>\n\n\t<div class="login-banner"></div>\n\n    <div class="logo middle-container"></div>\n\n\t<div class="login-box">\n\n\t\t<div class="box-con tran">\n\n\t\t\t<div class="login-con f-l">\n                <form action=" /submit/" class="form-horizontal" role="form" method = "post">\n\n\t\t\t\t<div class="form-group">\n\n\t\t\t\t\t<input type="text" placeholder="\xe9\x82\xae\xe7\xae\xb1" id="email" onchange = "checkCookie()" name = "email">\n\n\t\t\t\t\t<span class="error-notic">\xe6\x82\xa8\xe8\xbe\x93\xe5\x85\xa5\xe7\x9a\x84\xe9\x82\xae\xe7\xae\xb1\xe6\x9c\x89\xe8\xaf\xaf</span>\n\n\t\t\t\t</div>\n\n\t\t\t\t<div class="form-group">\n\n\t\t\t\t\t<input type="password" id="password" placeholder="\xe5\xaf\x86\xe7\xa0\x81" name="keywords"> <!-- name \xe7\x94\xa8\xe6\x9d\xa5\xe4\xbd\x9c\xe4\xb8\xbaID\xe4\xbc\xa0\xe7\xbb\x99\xe5\x90\x8e\xe7\xab\xaf \xe4\xba\xa4\xe6\x8d\xa2\xe4\xbf\xa1\xe6\x81\xaf-->\n\t\t\t\t\t<p style="color: red">data error,request failed</p>\n\t\t\t\t</div>\n\n\t\t\t\t<div class="form-group">\n\n\t\t\t\t\t<button type="submit" class="tran pr" id="login111" onclick = "record()" >\n\n\t\t\t\t\t\t<a href="#" class="tran login" onclick = "record()">\xe7\x99\xbb\xe5\xbd\x95</a>\n\n\t\t\t\t\t\t<!-- <img class="loading" src="images/loading.gif" style="display:block">\n -->\n\t\t\t\t\t</button>\n\n\t\t\t\t</div>\n                </form>\n\n                <div class="control-grounp">\n\n                     <label>\n                            <input style="width: 16px;height: 16px;" id="checkbox" type="checkbox" class="check-btn" checked="checked"><p style="color: #fff;display: inline-block;">\xe8\xae\xb0\xe4\xbd\x8f\xe6\x88\x91</p>\n                             <input type="hidden" name="userExpiresHours" id="userExpiresHours" value="720">\n                     </label>\n\n                     <a href="javascript:;" class="reset"> \xe5\xbf\x98\xe8\xae\xb0\xe5\xaf\x86\xe7\xa0\x81\xef\xbc\x9f</a>\n                </div>\n\t\t\t\t<!-- <div class="from-line"></div> -->\n\n\t\t\t\t<div class="form-group">\n\n\t\t\t\t\t<a href="javascript:;" class="move-signup a-tag tran blue-border">\xe5\x88\x9b\xe5\xbb\xba\xe8\xb4\xa6\xe6\x88\xb7<i class="iconfont tran">&#xe606;</i></a>\n\n\t\t\t\t</div>\n\n\t\t\t\t<!-- <div class="form-group">\n\n\t\t\t\t\t<a href="javascript:;" class="move-reset a-tag tran">\xe5\xbf\x98\xe8\xae\xb0\xe5\xaf\x86\xe7\xa0\x81\xef\xbc\x9f\xe9\x87\x8d\xe7\xbd\xae <i class="iconfont tran">&#xe606;</i></a>\n\n\t\t\t\t</div> -->\n\n\t\t\t\t<!-- <div class="form-group">\n\n\t\t\t\t\t<a href="javascript:;" class="move-other a-tag tran">\xe4\xbd\xbf\xe7\x94\xa8\xe7\xac\xac\xe4\xb8\x89\xe6\x96\xb9\xe5\xb8\x90\xe5\x8f\xb7\xe7\x99\xbb\xe5\xbd\x95<i class="iconfont tran">&#xe606;</i></a>\n\n\t\t\t\t</div> -->\n\n\t\t\t</div>\n\n\t\t\t<!-- \xe7\x99\xbb\xe5\xbd\x95 -->\n\n\n\n\t\t\t<div class="signup f-l">\n                <form action=" /sign_up/" class="form-horizontal" role="form" method = "post">\n\n\n\t\t\t\t<div class="form-group">\n\n\t\t\t\t\t<div class="signup-form">\n\n\t\t\t\t\t\t<input id = "set_email"  type="text" placeholder="\xe9\x82\xae\xe7\xae\xb1" class="email-mobile" onblur="verify.verifyEmail(this)">\n\n\t\t\t\t\t\t<!-- <a href="javascript:;" class="signup-select">\xe6\x89\x8b\xe6\x9c\xba\xe6\xb3\xa8\xe5\x86\x8c</a> -->\n\n\t\t\t\t\t</div>\n\n\t\t\t\t\t<span class="error-notic">\xe9\x82\xae\xe7\xae\xb1\xe6\xa0\xbc\xe5\xbc\x8f\xe4\xb8\x8d\xe6\xad\xa3\xe7\xa1\xae</span>\n\n\t\t\t\t</div>\n\n\t\t\t\t<div class="signup-email">\n\n\t\t\t\t\t<div class="form-group">\n\n\t\t\t\t\t\t<input id = "set_name" type="text"  placeholder="\xe6\x82\xa8\xe7\x9a\x84\xe5\x90\x8d\xe5\xad\x97">\n\n\t\t\t\t\t</div>\n\n\t\t\t\t\t<div class="form-group">\n\n\t\t\t\t\t\t<input id = "set_password" type="password" placeholder="\xe5\xaf\x86\xe7\xa0\x81\xef\xbc\x88\xe5\xad\x97\xe6\xaf\x8d\xe3\x80\x81\xe6\x95\xb0\xe5\xad\x97\xef\xbc\x8c\xe8\x87\xb3\xe5\xb0\x916\xe4\xbd\x8d\xef\xbc\x89" onblur="verify.PasswordLenght(this)" style=\'display: block;\'>\n                         <span class="error-notic">\xe5\xaf\x86\xe7\xa0\x81\xe9\x95\xbf\xe5\xba\xa6\xe4\xb8\x8d\xe5\xa4\x9f</span>\n\n\n\t\t\t\t\t</div>\n\n\t\t\t\t\t<div class="form-group" id = "sign_up">\n\n\t\t\t\t\t\t<button type="submit" class="tran pr" >\n\n\t\t\t\t\t\t\t<a href="javascript:;" class="tran">\xe6\xb3\xa8\xe5\x86\x8c</a>\n\n\t\t\t\t\t\t\t<img class="loading" src="../static/image/loading.gif">\n\n\t\t\t\t\t\t</button>\n\n                    </div>\n\n\t\t\t\t\t<!-- <p class="view-clause">\xe7\x82\xb9\xe5\x87\xbb\xe6\xb3\xa8\xe5\x86\x8c\xef\xbc\x8c\xe5\x8d\xb3\xe5\x90\x8c\xe6\x84\x8f\xe6\x88\x91\xe4\xbb\xac\xe7\x9a\x84 <a href="#">\xe7\x94\xa8\xe6\x88\xb7\xe9\x9a\x90\xe7\xa7\x81\xe6\x9d\xa1\xe6\xac\xbe</a></p> -->\n\n\t\t\t\t</div><!-- \xe9\x82\xae\xe7\xae\xb1\xe6\xb3\xa8\xe5\x86\x8c -->\n                </form>\n\n\t\t\t\t<div class="signup-tel" style="display:none">\n\n\t\t\t\t\t<div class="signup-form" id="message-inf" style="display:none">\n\n\t\t\t\t\t\t<input type="text" placeholder="\xe7\x9f\xad\xe4\xbf\xa1\xe9\xaa\x8c\xe8\xaf\x81\xe7\xa0\x81" style="width:180px;" onblur="verify.VerifyCount(this)">\n\n\t\t\t\t\t\t<a href="javascript:;" class="reacquire">\xe9\x87\x8d\xe6\x96\xb0\xe8\x8e\xb7\xe5\x8f\x96\xef\xbc\x8859\xef\xbc\x89</a>\n\n\t\t\t\t\t\t<span class="error-notic">\xe9\xaa\x8c\xe8\xaf\x81\xe7\xa0\x81\xe8\xbe\x93\xe5\x85\xa5\xe9\x94\x99\xe8\xaf\xaf</span>\n\n\t\t\t\t\t</div>\n\n\t\t\t\t\t<div class="form-group">\n\n\t\t\t\t\t\t<button type="submit" class="tran get-message pr">\n\n\t\t\t\t\t\t\t<a href="javascript:;" class="tran">\xe8\x8e\xb7\xe5\x8f\x96\xe7\x9f\xad\xe4\xbf\xa1\xe9\xaa\x8c\xe8\xaf\x81\xe7\xa0\x81</a>\n\n\t\t\t\t\t\t\t<img class="loading" src="images/loading.gif">\n\n\t\t\t\t\t\t</button>\n\n\t\t\t\t\t</div>\n\n\t\t\t\t</div><!-- \xe6\x89\x8b\xe6\x9c\xba\xe5\x8f\xb7\xe7\xa0\x81\xe6\xb3\xa8\xe5\x86\x8c -->\n\n\t\t\t<!--\t<div class="from-line"></div>-->\n\n\t\t\t\t<div class="form-group">\n\n\t\t\t\t\t<a href="javascript:;" class="move-login a-tag tran blue-border">\xe5\xb7\xb2\xe6\x9c\x89\xe5\xb8\x90\xe5\x8f\xb7\xef\xbc\x9f\xe7\x99\xbb\xe5\xbd\x95<i class="iconfont tran">&#xe606;</i></a>\n\n\t\t\t\t</div>\n\n\t\t\t\t<!-- <div class="form-group">\n\n\t\t\t\t\t<a href="javascript:;" class="move-other a-tag tran">\xe4\xbd\xbf\xe7\x94\xa8\xe7\xac\xac\xe4\xb8\x89\xe6\x96\xb9\xe5\xb8\x90\xe5\x8f\xb7\xe7\x99\xbb\xe5\xbd\x95<i class="iconfont tran">&#xe606;</i></a>\n\n\t\t\t\t</div> -->\n\n\t\t\t</div>\n\n\t\t\t<!-- \xe6\xb3\xa8\xe5\x86\x8c -->\n\n\n\n\t\t\t<!--<div class="other-way f-l">\n\n\t\t\t\t<div class="form-group">\n\n\t\t\t\t\t<button type="submit" class="tran pr">\n\n\t\t\t\t\t\t<a href="javascript:;" class="tran">QQ\xe5\xb8\x90\xe5\x8f\xb7\xe7\x99\xbb\xe5\xbd\x95</a>\n\n\t\t\t\t\t\t<img class="loading" src="images/loading.gif">\n\n\t\t\t\t\t</button>\n\n\t\t\t\t</div>\n\n\t\t\t\t<div class="form-group">\n\n\t\t\t\t\t<button type="submit" class="tran pr">\n\n\t\t\t\t\t\t<a href="javascript:;" class="tran">\xe6\x96\xb0\xe6\xb5\xaa\xe5\xbe\xae\xe5\x8d\x9a\xe5\xb8\x90\xe5\x8f\xb7\xe7\x99\xbb\xe5\xbd\x95</a>\n\n\t\t\t\t\t\t<img class="loading" src="images/loading.gif">\n\n\t\t\t\t\t</button>\n\n\t\t\t\t</div>\n\n\t\t\t\t<div class="form-group">\n\n\t\t\t\t\t<button type="submit" class="tran pr">\n\n\t\t\t\t\t\t<a href="javascript:;" class="tran">\xe5\xbe\xae\xe4\xbf\xa1\xe5\xb8\x90\xe5\x8f\xb7\xe7\x99\xbb\xe5\xbd\x95</a>\n\n\t\t\t\t\t\t<img class="loading" src="images/loading.gif">\n\n\t\t\t\t\t</button>\n\n\t\t\t\t</div>\n\n\t\t\t\t<div class="form-group">\n\n\t\t\t\t\t<button type="submit" class="tran pr">\n\n\t\t\t\t\t\t<a href="javascript:;" class="tran">\xe7\xbd\x91\xe6\x98\x93\xe5\xb8\x90\xe5\x8f\xb7\xe7\x99\xbb\xe5\xbd\x95</a>\n\n\t\t\t\t\t\t<img class="loading" src="images/loading.gif">\n\n\t\t\t\t\t</button>\n\n\t\t\t\t</div>\n\n\t\t\t\t<div class="from-line"></div>\n\n\t\t\t\t<div class="form-group">\n\n\t\t\t\t\t<a href="javascript:;" class="move-signup a-tag tran blue-border">\xe8\xbf\x98\xe6\xb2\xa1\xe6\x9c\x89\xe5\xb8\x90\xe5\x8f\xb7\xef\xbc\x9f\xe5\x85\x8d\xe8\xb4\xb9\xe6\xb3\xa8\xe5\x86\x8c<i class="iconfont tran">&#xe606;</i></a>\n\n\t\t\t\t</div>\n\n\t\t\t\t<div class="form-group">\n\n\t\t\t\t\t<a href="javascript:;" class="move-login a-tag tran">\xe5\xb7\xb2\xe6\x9c\x89\xe5\xb8\x90\xe5\x8f\xb7\xef\xbc\x9f\xe7\x99\xbb\xe5\xbd\x95<i class="iconfont tran">&#xe606;</i></a>\n\n\t\t\t\t</div>\n\n\t\t\t</div>\n\n\t\t\t<!-- \xe7\xac\xac\xe4\xb8\x89\xe6\x96\xb9\xe7\x99\xbb\xe5\xbd\x95 -->-->\n\n\n\n\t\t\t<div class="mimachongzhi f-l">\n\n\t\t\t\t<div class="form-group">\n\n\t\t\t\t\t<input type="text" placeholder="\xe8\xaf\xb7\xe8\xbe\x93\xe5\x85\xa5\xe6\x82\xa8\xe7\x9a\x84\xe9\x82\xae\xe7\xae\xb1\xe5\x9c\xb0\xe5\x9d\x80">\n\n\t\t\t\t\t<span class="error-notic">\xe9\x82\xae\xe7\xae\xb1\xe6\xa0\xbc\xe5\xbc\x8f\xe4\xb8\x8d\xe6\xad\xa3\xe7\xa1\xae</span>\n\n\t\t\t\t</div>\n\n\t\t\t\t<div class="form-group">\n\n\t\t\t\t\t<button type="submit" class="tran pr">\n\n\t\t\t\t\t\t<a href="javascript:;" class="tran">\xe5\x8f\x91\xe9\x80\x81\xe9\x82\xae\xe4\xbb\xb6\xe9\xaa\x8c\xe8\xaf\x81\xe7\xa0\x81</a>\n\n\t\t\t\t\t\t<img class="loading" src="images/loading.gif">\n\n\t\t\t\t\t</button>\n\n\t\t\t\t</div>\n\n               <div class="form-group">\n\n\t\t\t\t\t<input type="password" placeholder="\xe9\x82\xae\xe7\xae\xb1\xe9\xaa\x8c\xe8\xaf\x81\xe7\xa0\x81" onblur="verify.PasswordLenght(this)" style="display: block;">\n                    <span class="error-notic">\xe9\xaa\x8c\xe8\xaf\x81\xe7\xa0\x81\xe6\x9c\x89\xe8\xaf\xaf</span>\n\n\n\n               </div>\n                <div class="form-group">\n\n\t\t\t\t\t<input type="password" placeholder="\xe6\x96\xb0\xe5\xaf\x86\xe7\xa0\x81\xef\xbc\x88\xe5\xad\x97\xe6\xaf\x8d\xe3\x80\x81\xe6\x95\xb0\xe5\xad\x97\xef\xbc\x8c\xe8\x87\xb3\xe5\xb0\x916\xe4\xbd\x8d\xef\xbc\x89" onblur="verify.PasswordLenght(this)" style= "display: block;">\n                     <span class="error-notic">\xe5\xaf\x86\xe7\xa0\x81\xe9\x95\xbf\xe5\xba\xa6\xe4\xb8\x8d\xe5\xa4\x9f</span>\n\n\n\t\t\t    </div>\n\n\t\t\t     <div class="form-group">\n\n\t\t\t\t\t<button type="submit" class="resetPSD">\n\n\t\t\t\t\t\t<a href="javascript:;" class="tran">\xe4\xbf\xae\xe6\x94\xb9\xe5\xae\x8c\xe6\x88\x90</a>\n\n\t\t\t\t\t\t<img class="loading" src="images/loading.gif">\n\n\t\t\t\t\t</button>\n\n\t\t\t\t</div>\n\t\t\t\t<!--<div class="from-line"></div>\n\n\t\t\t\t<div class="form-group">\n\n\t\t\t\t\t<a href="javascript:;" class="move-signup\ta-tag tran blue-border">\xe5\x88\x9b\xe5\xbb\xba\xe8\xb4\xa6\xe5\x8f\xb7<i class="iconfont tran">&#xe606;</i></a>\n\n\t\t\t\t</div>\n\n\t\t\t\t<div class="form-group">\n\n\t\t\t\t\t<a href="javascript:;" class="move-login a-tag tran">\xe5\xb7\xb2\xe6\x9c\x89\xe5\xb8\x90\xe5\x8f\xb7\xef\xbc\x9f\xe7\x99\xbb\xe5\xbd\x95<i class="iconfont tran">&#xe606;</i></a>\n\n\t\t\t\t</div>\n\n\t\t\t</div>-->\n\n\t\t\t<!-- \xe5\xaf\x86\xe7\xa0\x81\xe9\x87\x8d\xe7\xbd\xae -->\n\n\n\n\t\t\t<!--<div class="mobile-success f-l">\n\n\t\t\t\t<p>\xe6\x89\x8b\xe6\x9c\xba\xe5\x8f\xb7 <span>186****7580</span> \xe9\xaa\x8c\xe8\xaf\x81\xe6\x88\x90\xe5\x8a\x9f</p>\n\n\t\t\t\t<p>\xe8\xaf\xb7\xe5\xae\x8c\xe5\x96\x84\xe6\x82\xa8\xe7\x9a\x84\xe8\xb4\xa6\xe5\x8f\xb7\xe4\xbf\xa1\xe6\x81\xaf\xef\xbc\x8c\xe6\x82\xa8\xe4\xb9\x9f\xe5\x8f\xaf\xe4\xbb\xa5<a href="#">\xe7\xbb\x91\xe5\xae\x9a\xe7\x8e\xb0\xe6\x9c\x89\xe8\xb4\xa6\xe5\x8f\xb7</a></p>\n\n\t\t\t\t<div class="form-group">\n\n\t\t\t\t\t<input type="text" placeholder="\xe9\x82\xae\xe7\xae\xb1" class="email-mobile" onblur="verify.verifyEmail(this)"/>\n\n\t\t\t\t\t<span class="error-notic">\xe9\x82\xae\xe7\xae\xb1\xe6\xa0\xbc\xe5\xbc\x8f\xe4\xb8\x8d\xe6\xad\xa3\xe7\xa1\xae</span>\n\n\t\t\t\t</div>\n\n\t\t\t\t<div class="form-group">\n\n\t\t\t\t\t<input type="text" placeholder="\xe6\x82\xa8\xe7\x9a\x84\xe5\x90\x8d\xe5\xad\x97">\n\n\t\t\t\t</div>\n\n\t\t\t\t<div class="form-group">\n\n\t\t\t\t\t<input type="password" placeholder="\xe5\xaf\x86\xe7\xa0\x81\xef\xbc\x88\xe5\xad\x97\xe6\xaf\x8d\xe3\x80\x81\xe6\x95\xb0\xe5\xad\x97\xef\xbc\x8c\xe8\x87\xb3\xe5\xb0\x916\xe4\xbd\x8d\xef\xbc\x89" onblur="verify.PasswordLenght(this)"/>\n\n\t\t\t\t\t<span class="error-notic">\xe5\xaf\x86\xe7\xa0\x81\xe9\x95\xbf\xe5\xba\xa6\xe4\xb8\x8d\xe5\xa4\x9f</span>\n\n\t\t\t\t</div>\n\n\t\t\t\t<div class="form-group">\n\n\t\t\t\t\t<button type="submit" class="tran pr">\n\n\t\t\t\t\t\t<a href="javascript:;" class="tran">\xe6\xb3\xa8\xe5\x86\x8c</a>\n\n\t\t\t\t\t\t<img class="loading" src="images/loading.gif">\n\n\t\t\t\t\t</button>\n\n\t\t\t\t</div>\n\n\t\t\t\t<p class="view-clause">\xe7\x82\xb9\xe5\x87\xbb\xe6\xb3\xa8\xe5\x86\x8c\xef\xbc\x8c\xe5\x8d\xb3\xe5\x90\x8c\xe6\x84\x8f\xe6\x88\x91\xe4\xbb\xac\xe7\x9a\x84 <a href="#">\xe7\x94\xa8\xe6\x88\xb7\xe9\x9a\x90\xe7\xa7\x81\xe6\x9d\xa1\xe6\xac\xbe</a></p>\n\n\t\t\t</div>-->\n\n\t\t\t<!-- \xe6\x89\x8b\xe6\x9c\xba\xe6\xb3\xa8\xe5\x86\x8c\xe6\x88\x90\xe5\x8a\x9f\xe6\xb7\xbb\xe8\xa1\xa5\xe4\xbf\xa1\xe6\x81\xaf -->\n\n\t\t</div>\n\n\t</div>\n\t</div>\n\n\n</body>\n\n</html>'
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- 新 Bootstrap4 核心 CSS 文件 -->
+        <link rel="stylesheet" href="../static/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../static/css/style.css">
+        <link rel="stylesheet" href="../static/css/iconfont.css">
+     <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+        <script src="../static/jquery/3.2.0/jquery.min.js"></script>
+     <!-- popper.min.js 用于弹窗、提示、下拉菜单 -->
+        <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+        <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
+        <script src="../static/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+        <title>首页</title>
+        <script type="text/javascript">
+
+        document.addEventListener('plusready', function(){
+            //console.log("所有plus api都应该在此事件发生后调用，否则会出现plus is undefined。"
+
+        });
+
+    </script>
+        <title>Impostor</title>
+    </head>
+    <body>
+    <div class=" container">
+         <div class="header">
+             <div class="user-info">
+                  <div class="user-pic" ><a href = "personal_Info.html"><img class="img-responsive img-circle   " src="../static/image/userpic.png" alt="头像不在了" ></a></div>
+                   <div class="user-name"><a href = "personal_Info.html">YZL</a></div>
+                  <div class="logout"> <input type="submit" value="退出" onclick="close();document.write('<n>')"></div>
+             </div>
+         </div>
+
+         <div class="search">
+             <div class="box2">
+             <div class=""><input id="search" onclick="$(this).select();" value="" type="text" placeholder="搜索"></div>
+             <div class="table">
+                 <div>  <input class="fresh"  type="button" value="刷新" onclick=""/></div>
+                 <div>   <select id="rent_type" class="select1">
+                             <option value="2">全部房间</option>
+                             <option value="0">成人房</option>
+                             <option value="1">儿童房</option>
+                             <option value="3">未知房</option>
+                         </select>
+                 </div>
+                 <div class="roomcondition">
+                         <span class="roomnum">200</span>Rooms-
+                         <span class="usernum">3000</span>Imposters
+                 </div>
+             </div>
+             </div>
+         </div>
+         <div class="room-box">
+             <div class="rooms">
+                <div class="roomnames" style="color: #059F7D;">妈妈说标题要20个字妈妈说标题要20个字QQ</div>
+                <div class="info">
+                    <div class="user-pic"><img class="img-responsive img-circle " src="../static/image/userpic.png" alt="头像不在了" ></div>
+
+                <div class="otherinfo float-right">
+                    <div class="user-name ">啊撒撒撒撒撒</div>
+                    <div class="icon "></div>
+                    <div class="roomnums float-right"><span class="inline" style="color: #059F7D;">5</span>/<span class="total">20</span></div>
+                </div>
+                </div>
+             </div>
+             <div class="rooms">
+                <div class="roomnames" style="color: #059F7D;">妈妈说标题要20个字妈妈说标题要20个字QQ</div>
+                <div class="info">
+                    <div class="user-pic"><img class="img-responsive img-circle " src="../static/image/userpic.png" alt="头像不在了" ></div>
+
+                <div class="otherinfo float-right">
+                    <div class="user-name ">啊撒撒撒撒撒</div>
+                    <div class="icon "></div>
+                    <div class="roomnums float-right"><span class="inline" style="color: #059F7D;">5</span>/<span class="total">20</span></div>
+                </div>
+                </div>
+             </div>
+             <div class="rooms">
+                <div class="roomnames" style="color: #059F7D;">妈妈说标题要20个字妈妈说标题要20个字QQ</div>
+                <div class="info">
+                    <div class="user-pic"><img class="img-responsive img-circle " src="../static/image/userpic.png" alt="头像不在了" ></div>
+
+                <div class="otherinfo float-right">
+                    <div class="user-name ">啊撒撒撒撒撒</div>
+                    <div class="icon "></div>
+                    <div class="roomnums float-right"><span class="inline" style="color: #059F7D;">5</span>/<span class="total">20</span></div>
+                </div>
+                </div>
+             </div>
+
+
+
+
+         </div>
+         <div class="foot">
+            <ul class="share">
+                <li><a href=""><div class="item1"></div></a></li>
+                <li><a href=""><div class="item2"></div></a></li>
+            </ul>
+            <ul class="about">
+                 <li><a href="">关于IMPOSTER</a></li>
+                 <li><a href="">帮助</a></li>
+            </ul>
+         </div>
+
+    </div>
+        <a href="creatroom.html"><div class="setroom"></div></a>
+    </body>
+</html>
