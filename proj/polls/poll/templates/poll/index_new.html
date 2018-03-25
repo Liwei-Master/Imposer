@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+div.container {
+    width: 100%;
+    min-height: 500px;
+    border: 1px solid gray;
+}
+
+header, footer {
+    padding: 1em;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
+}
+
+div.side {
+    min-height: 500px;
+    float: left;
+    width: 30%;
+    margin: 10px;
+    padding: 10px;
+
+}
+
+
+article {
+    margin-left: 170px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 60%;
+    background: #f1f1f1;
+}
+
+form.example button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+}
+
+form.example button:hover {
+    background: #0b7dda;
+}
+
+form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<header>
+   <h1>Let's poll</h1>
+</header>
+
+<nav class="navbar navbar-default" role="navigation">
+	<div class="container-fluid">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="">Let's poll</a>
+	</div>
+	<div>
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="{% url 'poll:index' %}">Poll</a></li>
+			<li><a href= {% url 'poll:launch' %}>A new poll</a></li>
+			<li class="dropdown">
+				<a href="" class="dropdown-toggle" data-toggle="dropdown">
+					Category
+					<b class="caret"></b>
+				</a>
+				<ul class="dropdown-menu">
+                    <!-- get method-->
+					<li value="sports"><a href="{% url 'poll:category' "Sports" %}">Sports</a></li>
+					<li><a href="{% url 'poll:category' "Politics" %}">Politics</a></li>
+					<li><a href="{% url 'poll:category' "Study" %}">Study</a></li>
+                    <li><a href="{% url 'poll:category' "Life" %}">Life</a></li>
+                    <li><a href="{% url 'poll:category' "Others" %}">Other</a></li>
+				</ul>
+			</li>
+            {% if request.session.is_login %}
+                <li><a href="{% url 'login:personal_info' %}">{{ request.session.user_name }}</a></li>
+                <li><a href="{% url 'login:logout' %}">Logout</a></li>
+            {% else %}
+                <li><a href= "{% url 'poll:login' %}">Login or Register</a></li>
+            {% endif %}
+		</ul>
+	</div>
+	</div>
+</nav>
+
+<div class = "side">
+    <form class="example" action="{% url 'poll:search'%}" method="post" style="margin:auto;max-width:100%">
+       {% csrf_token %}
+      <input type="text" placeholder="Search.." name="keywords">
+      <button type="submit"><i class="fa fa-search"></i></button>
+   </form>
+
+</div>
+<div>
+{{ message }}
+{% if polls %}
+    <ul>
+    {% for question in polls %}
+    <li><a href="{% url 'poll:detail' question.id %}">{{ question.question_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+</div>
+    <div style="position: absolute; top:80%; right:10%">
+        <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="?page={{ first_page }}">First</a></li>
+            <li class="page-item"><a class="page-link" href="?page={{ previous_page }}">Previous</a></li>
+            <li class="page-item active"><a class="page-link" href="?page={{ polls.number }}">{{ polls.number }}</a></li>
+            <li class="page-item"><a class="page-link" href="?page={{ next_page }}">Next</a></li>
+            <li class="page-item"><a class="page-link" href="?page={{ last_page }}">Last</a></li>
+        </ul>
+        <span class="current">
+            Page {{ polls.number }} of {{ polls.paginator.num_pages }}.
+        </span>
+    </div>
+</div>
+
+<footer>
+    {% if request.session.is_login %}
+
+    <h1>Hi,{{ request.session.user_name }} Well comeback!</h1>
+    {% else %}
+    <h1>To publish a poll and vote, please login</h1>
+    {% endif %}
+</footer>
+
+</body>
+</html>

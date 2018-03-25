@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{% block title %}base{% endblock %}</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+div.container {
+    width: 100%;
+    max-height: 100%;
+    border: 1px solid gray;
+}
+
+header, footer {
+    padding: 1em;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
+}
+
+div.side {
+    height: 450px;
+    float: right;
+    width: 30%;
+    margin: 10px;
+    padding: 10px;
+
+}
+</style>
+    {% block css %}{% endblock %}
+</head>
+<body>
+
+<div class="container">
+
+<header>
+   <h1>Let's poll</h1>
+</header>
+
+<nav class="navbar navbar-default" role="navigation">
+	<div class="container-fluid">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="">Let's poll</a>
+	</div>
+	<div>
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="{% url 'poll:index' %}">Poll</a></li>
+			<li><a href= "{% url 'poll:launch' %}">A new poll</a></li>
+                {% if request.session.is_login %}
+                <li><a href="{% url 'login:personal_info' %}">{{ request.session.user_name }}</a></li>
+                <li><a href="{% url 'login:logout' %}">Logout</a></li>
+                {% else %}
+                    <li><a href= "{% url 'poll:login' %}">Login</a></li>
+                {% endif %}
+		</ul>
+	</div>
+	</div>
+</nav>
+
+{% block content %}{% endblock %}
+
+
+</div>
+
+<footer>
+    {% if request.session.is_login %}
+    <h1>Hi, {{ request.session.user_name }} Well comeback!</h1>
+    {% else %}
+    <h1>To publish a poll and vote, please login</h1>
+    {% endif %}
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,614 @@
+body, div, ul, ol, li, p, i, em, h1, h2, h3, h4, a, strong, span, img, form, input, textarea, button{
+	padding: 0;
+	margin:0;
+}
+body{
+	font-family:"Microsoft YaHei", "Simsun", Tahoma, Arial,"Helvetica Neue","Hiragino Sans GB", "sans-self";
+	font-size: 14px;
+	line-height: 24px;
+	background-color: black;
+}
+@font-face {font-family: 'iconfont';
+    src: url('font/iconfont.eot'); /* IE9*/
+    src: url('font/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('font/iconfont.woff') format('woff'), /* chrome、firefox */
+    url('font/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('font/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+input, textarea{
+	outline: none;
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: inherit;
+}
+img{
+	border: 0;
+}
+.pr{
+	position: relative;
+}
+.pa{
+	position: absolute;
+}
+.pf{
+	position: fixed;
+}
+.f-l{
+	float: left;
+}
+.f-r{
+	float: right;
+}
+li, div, ul{
+	*zoom:1;
+}
+li:after, div:after, ul:after{
+	content: '';
+	display: table;
+	clear: both;
+}
+.tran{
+	transition:all 0.3s ease-out;
+	-webkit-transition:all 0.3s ease-out;
+	-moz-transition:all 0.3s ease-out;
+	-o-transition:all 0.3s ease-out;
+}
+.container{
+/*	width: 900px;*/
+	margin: 0 auto;
+	max-width: 1100px;
+	
+}
+/*--------------样式重置------------*/
+/***********/
+
+.login-banner{
+	top: 0;
+	z-index: -1;
+	position: absolute;
+	width: 100%;
+	height: 700px;
+	background: url(../images/bg.png) center bottom no-repeat \9;
+	background: url(../images/bg.png) center bottom/cover no-repeat;
+}
+
+/*@media screen and (min-width: 320px) {
+    .login-banner{
+    	height: 100px;
+    }
+}
+@media screen and (min-width: 480px) {
+    .login-banner{
+    	height: 120px;
+    }
+}
+@media screen and (min-width: 640px) {
+    .login-banner{
+    	height: 160px;
+    }
+}
+@media screen and (min-width: 768px) {
+    .login-banner{
+    	height: 180px;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .login-banner{
+    	height: 200px;
+    }
+}
+@media screen and (min-width: 1280px) {
+    .login-banner{
+    	height: 220px;
+    }
+}
+@media screen and (min-width: 1366px) {
+    .login-banner{
+    	height: 600px;
+    }
+}
+@media screen and (min-width: 1680px) {
+    .login-banner{
+    	height: 600px;
+    }
+}*/
+.login-banner{
+	height: 260px \9;
+}
+.middle-container{
+	margin:0 auto;
+	overflow-x: hidden;
+}
+.logo{
+	position: relative;
+	margin-top: 150px;
+	margin-bottom: 50px;
+	width: 383px;
+	height: 57px;
+	background: url(../images/logo.png) center  no-repeat ;
+}
+
+.login-box{
+	width: 280px;
+	margin:0 auto;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+.box-con{
+	width: 1600px;
+}
+.login-con{
+	width: 260px;
+	margin:0 10px; 
+}
+.login-box .form-group{
+	margin-top: 20px;
+}
+/*文字颜色*/
+  ::-webkit-input-placeholder {/*Chrome/Safari*/
+    color:#ffffff;
+    }
+    : :-moz-placeholder {/*Firefox*/
+    color#ffffff;
+    }
+    　: :-ms-input-placeholder {/*IE*/
+       color:#ffffff;
+    } 
+ /*input框样式*/
+.login-box input, .signup-form{
+	background-color: transparent;
+	color:#ffffff;
+	width: 260px;
+	height:42px;
+	line-height: 48px \9;
+	padding-left: 10px;
+	border: 3px #ffffff solid;
+	border-radius: 50px;
+	font-size: 10px;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	transition:all 0.3s ease-out;
+	-webkit-transition:all 0.3s ease-out;
+	-moz-transition:all 0.3s ease-out;
+}
+.login-box input:focus{
+	border-color: #f1d61f;
+	box-shadow: 0 0 15px #f1d61f;
+	-webkit-box-shadow: 0 0 15px #f1d61f;
+	-moz-box-shadow: 0 0 15px #f1d61f;
+}
+.control-grounp{
+	position: relative;
+	width: 100%;
+	margin-top: 16px;
+
+}
+.check-btn{
+	
+	color: #ffffff;
+	vertical-align: middle;
+}
+.reset{
+	float: right;
+	color: #ffffff;
+}
+.login-box button{
+	width: 260px;
+	height:42px;
+	line-height: 40px;
+	font-size: 16px;
+	border: 0;
+	background-color: #ffffff;
+	color: #60a091;
+	border-radius: 50px;
+}
+.login-box button a{
+	display: block;
+}
+.login-box button a:hover{
+	padding-top: 3px;
+}
+.login-box button:hover{
+	background-color: #60a091;
+	color:#ffffff;
+}
+.from-line{
+	height: 0;
+	overflow: hidden;
+	border-top: 1px #c2c2c2 solid;
+	margin-top: 20px;
+}
+.a-tag{
+	position: relative;
+	display: block;
+	height: 40px;
+	border: 1px #c2c2c2 solid;
+	text-align: center;
+	line-height: 40px;
+	color: #c2c2c2;
+	border-radius: 50px;
+	 
+}
+.blue-border{
+	border:3px #ffffff solid;
+	color: #ffffff;
+}
+
+.a-tag:hover{
+	color: #fff;
+}
+.blue-border:hover{
+	border-color: #f8b1b1;
+	box-shadow: 0 0 15px #f8b1b1;
+	-webkit-box-shadow: 0 0 15px #f8b1b1;
+	-moz-box-shadow: 0 0 15px #f8b1b1;
+}
+.a-tag i{
+	position: absolute;
+	right: 20px;
+	top: 0;
+	font-size: 24px;
+	color: #fff;
+}
+.a-tag:hover i{
+	right: 10px;
+}
+.signup, .other-way, .mimachongzhi, .mobile-success{
+	widows: 300px;
+	margin: 0 10px;
+}
+
+
+.signup-form {
+	margin-top: 20px;
+}
+.signup-form input{
+	border: 0;
+	height: 38px;
+	width: 220px;
+}
+.signup-form input:focus{
+	box-shadow:0 0 0 #fff;
+}
+.signup-form.border{
+	border-color: #f8b1b1;
+	box-shadow: 0 0 15px #f8b1b1;
+	-webkit-box-shadow: 0 0 15px #f8b1b1;
+	-moz-box-shadow: 0 0 15px #f8b1b1;
+}
+.signup-form a{
+	color: #03a9f4;
+}
+.view-clause{
+	padding-top: 20px;
+	line-height: 14px;
+	text-align: center;
+	color: #808080;
+}
+.view-clause a{
+	color: #03a9f4;
+}
+.view-clause a:hover{
+	text-decoration: underline;
+}
+a.reacquire{
+	color: #c1c1c1;
+}
+.error-notic{
+	color: #ff4e00;
+	display: none;
+}
+.login-footer{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	padding: 10px 0;
+	border-top: 1px #c1c1c1 solid;
+	text-align: center;
+	font-size: 12px;
+	background-color: #fff;
+	line-height: 20px;
+}
+.login-footer h1{
+	font-size: 18px;
+	font-weight: normal;
+}
+.login-nav{
+	width: 100%;
+	height: 30px;
+	background-color: rgba(0,0,0,0.7);
+	color: #fff;
+	border-bottom: 1px #c1c1c1 solid;
+}
+.login-nav ul{
+	padding-right: 50px;
+}
+.login-nav li{
+	float: left;
+	line-height: 30px;
+	padding: 0 10px;
+}
+.login-nav a:hover{
+	text-decoration: underline;
+	color: #03a9f4;
+}
+.mobile-success{
+	padding-top: 20px;
+}
+.mobile-success p{
+	text-align: center;
+	color: #666;
+}
+.mobile-success p span{
+	font-weight: bold;
+	padding: 0 10px;
+}
+.mobile-success p a{
+	color: #03a9f4;
+	padding-left: 5px;
+}
+.mobile-success p a:hover{
+	text-decoration: underline;
+}
+.loading{
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	display: none;
+
+}
+/*--------------首页------------*/
+.middle-container{
+   position: relative;
+   margin:0 auto;
+   background: #5e5e5e;
+   width:900px;
+   height: 900px;  
+}
+.header{
+	position: relative;
+	width: 100%;
+}
+.user-info{
+	position: relative;
+	float: left;
+	margin: 20px 25px 0px 0;
+	height: 70px;
+}
+.user-info>div{
+	display: block;
+	font-size: 16px;
+	cursor:pointer;
+}
+.user-info>.user-pic{
+	border-radius: 50%;
+	border:solid 2px #fff;
+	background: #ffde00;
+    overflow: hidden;
+    width:60px;
+	height:60px;
+	float: left;
+}
+.user-info>.user-pic>img{
+	
+}
+.user-info>.user-name{
+	min-width: 100px;
+    color: #fff;
+    padding-left: 22px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+   /* margin-top: 10px;*/
+}
+.user-info>.logout{
+	 min-width: 100px;
+    color: #fff;
+    padding-left: 22px;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-top: 10px;
+}
+.user-info>.logout>input{
+	background: transparent;
+	border:0px;
+	color: #fff;
+	cursor:pointer;	
+}
+
+.search{
+	position: relative;
+	width: 100%;
+	background: #fff;
+	border-radius: 10px;	
+}
+.search>.box2{
+	position: relative;
+	width: 100%;
+	padding:20px;
+}
+#search {
+	width: 100%;
+	border-radius: 10px;
+	border: 1px solid black;	
+	padding: 5px 10px ;
+	transition:  0.4s;
+}
+#search:focus{
+	border-color: #f1d61f;
+	box-shadow: 0 0 15px #f1d61f;
+	-webkit-box-shadow: 0 0 15px #f1d61f;
+	-moz-box-shadow: 0 0 15px #f1d61f;
+	transition:  0.4s;
+}
+.table{
+	position: relative;
+	margin-top: 12px;	
+	margin-bottom: 0;
+}
+.table>div{
+	display: inline-block;
+}
+.fresh{
+	background: #059f7d;
+	color: #fff;
+	border-radius: 10px;
+	padding: 5px  20px;
+	border: 1px;
+	margin-right: 14px;
+}
+.fresh:hover{
+	background: #07b790;
+}
+.roomcondition{
+	float: right;
+}
+.roomcondition>.roomnum,.usernum{	
+color: #059f7d;	
+}
+.setroom{
+	position: fixed;
+	bottom:7px;
+	left: 50%;
+	margin-left: -32px;
+	display:block;
+	background: url(../images/plus.png);
+	 width: 65px;
+	 height: 65px;
+	transform: rotate(0deg); 
+	transition:  0.6s;
+	cursor: pointer;
+}
+.setroom:hover{
+transform: rotate(360deg);
+transition:  0.6s;
+-moz-transition:  0.6s; /* Firefox 4 */
+-webkit-transition: 0.6s; /* Safari 和 Chrome */
+-o-transition:  0.6s; /* Opera */
+}
+.foot{
+	position: relative;
+	width: 100%;
+	margin-top: 20px;
+}
+ .foot>ul>li{
+ 	display: inline-block;
+ 	margin-left: 10px;
+ 
+ }
+.item1{
+ 	background: url(../images/qq.png);
+ 	width: 30px;
+ 	height: 30px;
+ }
+.item2{
+ 	background: url(../images/wechat.png);
+ 	width: 30px;
+ 	height: 30px;
+ }
+ .foot>.about>li>a{
+ 	color: #fff;
+ }
+ 
+ .room-box{
+ position: relative;
+ margin-top: 20px;	
+ overflow: hidden;
+ }
+ .room-box>div{
+ 	display: inline-block;
+ 	margin:10px 10px 0 0px;
+ 	position: relative;
+ 	padding: 10px;
+ 	background: #fff;
+ 	border-radius: 10px;
+ 	max-width: 216px;
+ 	overflow: hidden;
+ }
+ .room-box>div:hover{
+ 	border-color: #f1d61f;
+	box-shadow: 0 0 15px #f1d61f;vector-effect: inherit;
+ }
+.info>div{
+	position: relative;
+ 	display: inline-block;
+ }
+ .info>.user-pic{
+ height: 50px;
+ width: 50px;
+ border-radius: 50%;	
+ background: #F1D61F;
+ overflow: hidden;
+ }
+ .roomnums{
+ 	margin-top: 5px;
+ }
+.float-right{
+     float:right;
+}
+/*--------------创建房屋------------*/
+.wrap{
+	position: relative;
+	padding: 20px;
+    margin: 30px auto;
+    background: #fff;
+    border-radius: 10px;    
+    max-width: 630px;
+}
+.create-room-submit-input{
+	background: #059f7d;
+	color: #fff;	
+	border: 1px;
+}
+.create-room-submit-input:hover{
+background: #07b790;	
+}
+.form-group>input:focus{
+border-color: #f1d61f;
+	box-shadow: 0 0 15px #f1d61f;
+	-webkit-box-shadow: 0 0 15px #f1d61f;
+	-moz-box-shadow: 0 0 15px #f1d61f;
+	transition:  0.4s;	
+}
+/*--------------个人信息------------*/
+.person-box{
+	position: relative;
+	margin: 0px 0;
+}
+.person-box>div{
+	color: white;
+}
+#passwordchange{
+	
+	margin-bottom: 20px;
+}
+.per-pic{
+	position: relative;
+	height: 200px;
+	overflow: hidden;
+}
+.per-pic>.pic-bg{
+	width: 100%;
+	filter: blur(4px);
+}
+.per-pic>.pic-box{
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	top: 50%;
+	margin-top: -25px;
+	left: 50%;
+	margin-left: -25px;
+	border-radius: 50%;
+	border:2px solid #fff;
+	overflow: hidden;
+}
+.per-pic>.pic-box>.pics{
+	width: 60px;
+}

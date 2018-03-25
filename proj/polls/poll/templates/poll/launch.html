@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="UTF-8">
+		<!--<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />-->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- 新 Bootstrap4 核心 CSS 文件 -->
+		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../../static/poll/css/style.css">
+		<link rel="stylesheet" href="../../static/poll/css/iconfont.css">
+
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+		<!-- popper.min.js 用于弹窗、提示、下拉菜单 -->
+		<script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+		<!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
+		<script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+		<script src="../../static/poll/js/comment.js"></script>
+		<title>Create poll</title>
+        <script>
+        var num = 2
+        var option = '<label for="form-room-description">'+ 'option' + ' ' + num + '</label>'+'<input type="text" class="form-control" id="form-room-description" name="'+num+'" value="" maxlength="140">';
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                $("#op").append(option);
+                num =1 + num;
+                option = '<label for="form-room-description">'+ 'option' + ' ' + num + '</label>'+'<input type="text" class="form-control" id="form-room-description" name="'+num+'" value="" maxlength="140">';
+            });
+            $("#btn2").click(function() {
+                var input = '<input type="hidden" value="'+num+'" name="limit">';
+                $("#op").append(input);
+                $("#create").css("display","");
+            });
+        });
+       </script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="col-xs-6 col-sm-12">
+				<div class="wrap">
+					<form action="{% url 'poll:new_topic' %}" method="post">
+                    {% csrf_token %}
+                         <div class="form-group">
+                         <label for="form-user-name">Topic</label>
+                          <input type="text" class="form-control" id="form-user-name" name="topic" value="" maxlength="200" required="" autofocus="">
+                         </div>
+                         <div class="form-group">
+          <label for="form-user-limit">number of voters</label>
+          <select class="form-control" id="form-user-limit" name="limit_of_voters" required="">
+                          <option value="50">50</option>
+                          <option value="200">200</option>
+                          <option value="500">500</option>
+                          <option value="700" selected="">700</option>
+                          <option value="1000">1000</option>
+                          <option value="5000">5000</option>
+                          <option value="10000">10000</option>
+                      </select>
+                         </div>
+                         <div class="form-group">
+		                 	<label for="form-room-description">Type of Topic</label>
+		                  	<select id="rent_type" class="select1 form-control" name="type_of_topic">
+			                 <option value="Politics">Politics</option>
+			                 <option value="Sports">Sports</option>
+			                 <option value="Life">Life</option>
+                             <option value="Study">Study</option>
+                             <option value="Others">others</option>
+		                 </select>
+		 	 	         </div>
+
+                         <div class="form-group" id="op">
+                             <label for="form-room-description">option 0</label>
+                             <input type="text" class="form-control" id="" name="0" value="" maxlength="140">
+                             <label for="form-room-description">option 1</label>
+                             <input type="text" class="form-control" id="" name="1" value="" maxlength="140">
+                         </div>
+                         <button id="btn1" type="button" class="btn btn-info">More options</button>
+                         <button id="btn2" type="button" class="btn btn-info">Finalise</button>
+                         <input type="submit" name="submit" value="Create" id="create" class="create-room-submit-input btn btn-primary" style="display:none">
+
+
+
+				         <div class="pull-right">
+                             <a href="{% url 'poll:index' %}">return</a>
+                         </div>
+                    </form>
+				</div>
+			</div>
+		</div>
+		<script>
+
+
+		</script>
+
+	</body>
+</html>

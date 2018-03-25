@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- 新 Bootstrap4 核心 CSS 文件 -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../static/poll/css/style.css">
+        <link rel="stylesheet" href="../../static/poll/css/iconfont.css">
+        <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+        <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+        <!-- popper.min.js 用于弹窗、提示、下拉菜单 -->
+        <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+        <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
+        <script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+        <title>Homepage</title>
+        <script type="text/javascript">
+   		document.addEventListener('plusready', function(){
+   			console.log("所有plus api都应该在此事件发生后调用，否则会出现plus is undefined。")
+   		});
+
+
+    </script>
+		<title>Impostor</title>
+
+	</head>
+	<body>
+	<div class=" container">
+		 <div class="header">
+	         <div class="user-info">
+	             {% if request.session.is_login %}
+	         	  <div class="user-pic"> <a href="{% url 'login:personal_info' %}"><img class="img-responsive img-circle" src="../../static/poll/image/userpic.png" alt="头像不在了"></a></div>
+	         	  <div class="user-name"><a href="personal_Info.html">{{ request.session.user_name }}</a></div>
+	         	  <div class="logout"> <a href="{% url 'login:logout' %}">Logout</a></div>
+                 {% else %}
+                     <div class="logout"> <a href= "{% url 'poll:login' %}">Login or Register</a></div>
+                 {% endif %}
+	         </div>
+		 </div>
+
+		 <div class="search">
+		 	 <div class="box2">
+
+		 	 <div class="">
+                 <form class="example" action="{% url 'poll:search'%}" method="post" style="margin:auto;max-width:80%; float: left">
+                     {% csrf_token %}
+                 <input id="search" onclick="$(this).select();" value="" type="text" placeholder="Search.." name="keywords" style="margin-bottom: 1%">
+                     <button type="submit" class="btn btn-primary"> Search </button>
+                 </form>
+                     <a href="{% url 'poll:index' %}" class="btn btn-info" role="button">All</a>
+                     <a href="{% url 'poll:category' "Politics" %}" class="btn btn-info" role="button">Politics</a>
+                     <a href="{% url 'poll:category' "Sports" %}" class="btn btn-info" role="button">Sports</a>
+                     <a href="{% url 'poll:category' "Study" %}" class="btn btn-info" role="button">Study</a>
+                     <a href="{% url 'poll:category' "Life" %}" class="btn btn-info" role="button">Life</a>
+                     <a href="{% url 'poll:category' "Others" %}" class="btn btn-info" role="button">Others</a>
+             </div>
+
+		 	 <div class="table">
+		 	 	 <div class="roomcondition">
+		 	 	 	     <span class="roomnum">{{ user_number }} </span>Users,
+		 	 	 	     <span class="usernum"> {{ poll_number }} </span>Polls
+		 	 	 </div>
+             </div>
+
+             </div>
+         </div>
+
+         {{ message }}
+         <div class="room-box">
+         {% if polls %}
+             {% for question in polls %}
+		 	 <div class="rooms">
+		 	 	<div class="roomnames" style="color: #059F7D;"><a href="{% url 'poll:detail' question.id %}">{{ question.question_text }}</a></div>
+		 	 	<div class="info">
+		 	 		<div class="user-pic"><img class="img-responsive img-circle	" src="../../static/poll/image/userpic.png" alt="头像不在了"></div>
+		 	 	<div class="otherinfo float-right">
+		 	 		<div class="user-name ">{{ question.launcher }}</div>
+		 	 		<div class="icon "></div>
+		 	 		<div class="roomnums float-right"><span class="inline" style="color: #059F7D;">{{ question.number_of_votes }}</span>/<span class="total">{{ question.limit_of_voters }}</span></div>
+		 	 	</div>
+		 	 	</div>
+		 	 </div>
+
+             {% endfor %}
+             {% else %}
+             <p>No polls are available.</p>
+         {% endif%}
+         </div>
+
+         <div style="position: absolute; top:80%; right:10%">
+             <ul class="pagination">
+                 <li class="page-item"><a class="page-link" href="?page={{ first_page }}">First</a></li>
+                 <li class="page-item"><a class="page-link" href="?page={{ previous_page }}">Previous</a></li>
+                 <li class="page-item active"><a class="page-link" href="?page={{ polls.number }}">{{ polls.number }}</a></li>
+                 <li class="page-item"><a class="page-link" href="?page={{ next_page }}">Next</a></li>
+                 <li class="page-item"><a class="page-link" href="?page={{ last_page }}">Last</a></li>
+             </ul>
+             <span class="current">
+                 <p style="color: #f1d61f">Page {{ polls.number }} of {{ polls.paginator.num_pages }}.</p>
+             </span>
+         </div>
+		 <div class="foot">
+		 	<ul class="share">
+		 		<li><a href=""><div class="item1"></div></a></li>
+		 		<li><a href=""><div class="item2"></div></a></li>
+		 	</ul>
+		 	<ul class="about">
+		 		 <li><a href="">About IMPOSTOR</a></li>
+		 		 <li><a href="">Help</a></li>
+		 	</ul>
+		 </div>
+
+	</div>
+    <a href= {% url 'poll:launch' %}><div class="setroom"></div></a>
+	</body>
+</html>

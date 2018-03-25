@@ -1,0 +1,53 @@
+{% extends 'poll/base.html' %}
+{% block title %} Result{% endblock %}
+
+
+{% block content %}
+<div class = "side">
+    <h1>{{ question.question_text }}</h1>
+<ul>
+{% for choice in question.choice_set.all %}
+    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+{% endfor %}
+</ul>
+
+    <a href="{% url 'poll:index' %}">Vote again</a>
+
+</div>
+
+
+<h3>Argument</h3>
+
+    {% for reason in question.reason_set.all %}
+        <div class="panel panel-default" style="max-height: 100px ;width: 60%">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    Choice:{{ reason.choice }}
+		        </h3>
+	        </div>
+            <div class="panel-body" >
+                {{ reason.reason_text }}
+            </div>
+        </div>
+
+{% endfor %}
+
+<div class="pagination" style="position: absolute; top:85%; right:30%" >
+
+<ul class="pagination">
+    {% for i in arguments.paginator.page_range %}
+        {% if arguments.number == i %}
+             <li class="active"><a href="?page={{ i }}">{{ i }}</a></li>
+        {% else %}
+        <li><a href="?page={{ i }}">{{ i }}</a></li>
+        {% endif %}
+    {% endfor %}
+</ul>
+ <span class="current">
+            Page {{ arguments.number }} of {{ arguments.paginator.num_pages }}.
+ </span>
+
+</div>
+
+{% endblock %}
+
