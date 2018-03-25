@@ -1,6 +1,6 @@
 
 ## Main idea 
-Imposer is application that allow people to **launch a vote** or **vote online** and **give their own comment** when they have voted. 
+Imposer is an application that allows people to **launch a vote** or **vote online** and **give their own comment** when they have voted. 
 
 ### Login system
 1. Users are supposed to register by filling their **unique name**, **email**, **password** and **gender**. 
