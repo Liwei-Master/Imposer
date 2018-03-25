@@ -1,7 +1,7 @@
 # Imposter
 This project for us is to go through the entire process of building an application with a strong backend.
 
-**Briefly, this is an online-communication application**(this a hybird version of website and app)
+**Briefly, this is an online poll and communication application**(this a hybird version of website and app)
 
 ## Technics
 1. Django --- for the whole backend 
