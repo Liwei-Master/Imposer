@@ -20,7 +20,7 @@ Django nginx wsgi mysql
 
 ## Team
 There are 3 menbers contributing to this project:
-Liwei: The whole backend, and communication between back and front end.
-Quishi: Any thing about server(nginx, mysql, wsgi)
-Zheliang: the front end 
+1. Liwei: The whole backend, and communication between back and front end.
+2. Quishi: Any thing about server(nginx, mysql, wsgi)
+3. Zheliang: the front end 
 
