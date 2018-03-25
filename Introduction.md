@@ -13,3 +13,4 @@ Imposer is application that allow people to **launch a vote** or **vote online**
 2. Visitors can read all the poll by **specific searching**, **Category** or **random looking through**, but they must be **registered users**  if they have an attempt to vote. Otherwise, visitors would be noticed to register or login
 3. Once visitors find the specific poll and click in, the **comments of past voters** and **voting panel** will be displayed.
 4. After the voting, the **result** will be discovered, meanwhile, current user's **comment** of this topic will appear simultaneously.
+
