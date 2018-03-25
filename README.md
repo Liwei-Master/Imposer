@@ -12,11 +12,11 @@ This project for us is to go through the entire process of building an applicati
 ## Tools
 Django nginx wsgi mysql
 
-## Schedule
-1. the entire project is completed within 2 weeks
-2. the Agile developing model will be used.
+## Process
+1. the entire project has been completed within 2 weeks
+2. the Agile developing model is used.
 (eg. aim to have a car: first build a bicycle, then a bike, finally a car  )
-3. more to come
+3. Back end is based on the Front end.   
 
 ## Team
 There are 3 menbers contributing to this project:
