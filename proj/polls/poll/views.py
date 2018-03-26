@@ -48,7 +48,7 @@ def index(request):
 
 def detail(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
-    arguments = question.reason_set.all()
+    arguments = question.reason_set.all().order_by('reason_text')
     # Show 3 contacts per page
     pages = Paginator(arguments, 3)
     # GET method
@@ -199,7 +199,7 @@ def category(request, name):
         'polls': polls,
 
     }
-    return render(request, 'poll/index_new.html', context)
+    return render(request, 'poll/index.html', context)
 
 def login(request):
 
