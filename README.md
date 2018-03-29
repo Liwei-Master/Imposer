@@ -24,3 +24,4 @@ There are 3 menbers contributing to this project:
 2. Quishi: Any thing about server(nginx, mysql, wsgi)
 3. Zheliang: the front end 
 
+To view it online: [Impostor](http://176.122.146.160:8000/poll/)
